@@ -19,7 +19,7 @@ export default function App() {
 
   function handleDownload() {
     // console.log(card2export.current);
-    toPng(card2export.current, { cacheBust: true })
+    toPng(card2export.current, { cacheBust: true, pixelRatio: 4 })
       .then((imageURL) => {
         const link = document.createElement("a");
         link.download = "lyriq-card.png"; // specify file name on download
