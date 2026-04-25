@@ -1,25 +1,114 @@
-.card{
-  width: 400px; 
-  height: 500px; 
+@font-face {
+  font-family: 'cannon';
+  src: url('../../public/cannon-sc-extra-bold.ttf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
 
-  /* background-color: grey; */
-  background-color: #D0D0D0 ;
+@font-face {
+  font-family: 'hellvatica';
+  src: url('../../public//helvetica-oblique.ttf') format('opentype');
+  /* font-weight: 700; */
+  font-style: normal;
+}
+
+.importCard{
+  height: 31.25rem;
+  aspect-ratio: 4/5;
+
   display: flex; 
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
+
+  background-color: grey;
+}
+
+.card{
+  height: 31.25rem;
+  aspect-ratio: 4/5;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; 
+
+  position: relative ;
+  z-index: 0;
+
+  &::before{
+    content: ''; 
+    position: absolute;
+    inset:0;
+
+    width: 100%; 
+    height: 100%; 
+
+    z-index: 0;
+    background: #000000;
+    background: linear-gradient(360deg, rgba(0, 0, 0, 1) 3%, rgba(255, 255, 255, 0) 73%);
+  }
+}
+
+.content{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 0 0 23px;
   
-  /* margin: 0px auto ;  */
+  position: relative;
+  z-index: 1;
+}
+
+.swipe{
+  display: block;
+  width: fit-content;
+  font-family: 'cannon'; 
+  font-size: 14px;
+  margin-top: 15.5px; 
+  color: white;
+}
+
+.type{
+  display: block;
+  width: fit-content;
+  font-family: 'cannon'; 
+  font-size: 12px;
+  background-color: rgb(255, 255, 255); 
+
+  padding: 4px 6px;
+  margin-bottom: 16px;
+}
+
+.caption{
+  font-family: 'hellvatica'; 
+  margin: 0;
+  color: white;
+  margin-bottom: 13.5px; 
+  font-size: 12px;
+  font-style: italic;
+}
+
+
+.news{
+  font-family: 'cannon'; 
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: -0.06em;
+  margin-bottom: 18px;
+  color: white;
 }
 
 .footer{
-  height: 10%;
-  /* margin-top: auto; */
-  background-color: black;
-  border-top: 2px solid white;
-  
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
-  padding: 0 12px;
+  margin-bottom: 18px;
+  margin-left: -18px;
+}
+
+.hr{
+  height: 2px;
+  width: 100%;
+  margin-left: 12px;
+  background-color: rgb(255, 255, 255);
 }

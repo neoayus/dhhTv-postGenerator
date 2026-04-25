@@ -2,7 +2,7 @@ export default function Form({ data, setData }) {
   return (
     <form className="form">
       <fieldset>
-        <legend> news card (info) </legend>
+        <legend> news post </legend>
 
         <label id="image">
           Choose Background:
@@ -34,7 +34,7 @@ export default function Form({ data, setData }) {
         <label id="news">
           NEWS :
           <textarea
-            placeholder="here goes Lyrics..."
+            placeholder="enter your news here."
             rows="3"
             value={data.news}
             onChange={(e) =>

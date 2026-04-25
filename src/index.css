@@ -16,7 +16,7 @@
   -moz-osx-font-smoothing: grayscale;
 } */
 
-*{
+body{
   box-sizing: border-box;
   font-family: "Questrial", sans-serif;
   margin: 0 ; 
@@ -26,34 +26,6 @@
   /* font-weight: 400; */
 }
 
-
-.background{
-  text-align: center;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover; 
-
-  flex: 1; 
-  
-  display: flex; 
-  flex-direction: column;
-  justify-content: flex-end;
-  
-
-  position: relative;
-  &::before{
-    position: absolute;
-
-    content: ''; 
-
-    width: 100%; 
-    height: 100%; 
-
-    /* background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(255, 255, 255, 0) 100%); */
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(255, 255, 255, 0) 71%);
-    z-index: 1;
-  }
-}
 /* CONDITIONAL REPLACEMENT FOR BACKGROUND */
 
 .import-screen{
@@ -68,39 +40,6 @@
 
 .import-screen p{
   margin: 0; 
-}
-
-div.lyrics{
-  text-align: left;
-  margin: 0px 0px 12px 0px ; 
-  padding: 4px 8px; 
-
-  z-index: 1; 
-  
-}
-span.bar{
-  display: flex;
-  flex-direction: column;
-
-  background-color: white;
-  height: fit-content;
-  width: fit-content;
-  margin:3.5px;
-  padding: 2.5px 3.5px; 
-}
-
-/* delete */
-.card .song-info{
-  color: white; 
-}
-
-/* .song-info{
-} */
-
-
-.logo.lyriq{
-  color: white ; 
-  height: 60% ;
 }
 
 form fieldset{
@@ -151,27 +90,9 @@ form label input[type="file"]::file-selector-button:active{
   background-color: rgb(80, 80, 80);
 }
 
-.logo.import{
-  color: black;
-  height: 25px;
-}
-
 /* button */
 button{
   padding: 8px 16px;
-  border: none;
-  background: #d0d0d0;
-  color: black;
-  border: .7px  solid #898989;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-#ratio{
-  margin-left: auto;
-  margin-right: 15px;
-  padding: 8px 16px;
-
   border: none;
   background: #d0d0d0;
   color: black;
@@ -262,7 +183,6 @@ ul > li:hover{
   width: 40px;   
   padding-right: 10px; 
 }
-
 
 /* FIX: Downloded Card having hidden margin */
 .page{

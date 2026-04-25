@@ -1,6 +1,6 @@
 // import icon
 import { useEffect, useState } from "react";
-import { Hamburger, Cross, Github } from "./SVGs";
+import { Logo, Hamburger, Cross, Github } from "./SVGs";
 
 export default function Navbar() {
   const [menu, setMenu] = useState(false);
@@ -23,7 +23,9 @@ export default function Navbar() {
         {!menu ? (
           <>
             <Hamburger onClick={handleNavMenu} />
-            <span className="lyriq">DHH Tv</span>
+            <div className="logo">
+              <Logo color="black" />
+            </div>
           </>
         ) : (
           <Cross onClick={handleNavMenu} />
