@@ -85,7 +85,7 @@
   width: fit-content;
 
   font-family: 'cannon';
-  font-size: 14px;
+  font-size: 10px;
 
   margin-top: 15.5px;
   color: white;
@@ -96,21 +96,21 @@
   width: fit-content;
 
   font-family: 'cannon';
-  font-size: 12px;
+  font-size: 10px;
 
   background-color: white;
 
-  padding: 4px 6px;
+  padding: 2px 8px;
   margin-bottom: 16px;
 }
 
 .news {
   font-family: 'cannon';
   font-weight: 700;
-  font-size: 24px;
+  font-size: 22px;
 
   letter-spacing: -0.06em;
-  margin-bottom: 18px;
+  margin-bottom: 12px;
 
   color: white;
 }
@@ -121,6 +121,7 @@
 
   margin: 0 0 13.5px 0;
   font-size: 12px;
+  font-weight: 100;
 
   color: white;
 }
@@ -132,7 +133,7 @@
   align-items: center;
 
   margin-bottom: 18px;
-  margin-left: -18px;
+  margin-left: -10px;
 }
 
 .hr {
