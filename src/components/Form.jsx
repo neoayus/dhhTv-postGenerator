@@ -1,12 +1,11 @@
 export default function Form({ data, setData }) {
-
   return (
     <form className="form">
       <fieldset>
-        <legend> lyrics card (info) </legend>
+        <legend> news card (info) </legend>
 
         <label id="image">
-          choose image :
+          Choose Background:
           <input
             type="file"
             accept=".png, .jpeg, .jpg"
@@ -32,46 +31,31 @@ export default function Form({ data, setData }) {
           />
         </label>
 
-        <label id="lyrics">
-          Lyrics :
+        <label id="news">
+          NEWS :
           <textarea
             placeholder="here goes Lyrics..."
             rows="3"
-            value={data.lyrics}
+            value={data.news}
             onChange={(e) =>
               setData((prev) => ({
                 ...prev,
-                lyrics: e.target.value,
+                news: e.target.value,
               }))
             }
           />
         </label>
 
-        <label id="artist">
-          Artist Name :
+        <label id="caption">
+          Caption
           <input
             type="text"
-            placeholder="Artist"
-            value={data.artist}
+            placeholder="enter sub-caption"
+            value={data.caption}
             onChange={(e) =>
               setData((prev) => ({
                 ...prev,
-                artist: e.target.value,
-              }))
-            }
-          />
-        </label>
-
-        <label id="song">
-          Song Name :
-          <input
-            type="text"
-            placeholder="Song"
-            value={data.song}
-            onChange={(e) =>
-              setData((prev) => ({
-                ...prev,
-                song: e.target.value,
+                caption: e.target.value,
               }))
             }
           />

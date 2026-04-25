@@ -1,17 +1,16 @@
-import { Import, Logo} from "./SVGs";
+import style from "../style/Card.module.css";
+import { Import, Logo } from "./SVGs";
 
-export default function Card({data, ref, ratioStyle}) {
-
+export default function Card({ data, ref, ratioStyle }) {
   // refactor: split the lyrics block in different bars on line brak.
-  const lyricsBlock = data.lyrics.split("\n").map((bar, index)=>(
-    <span className="bar" key ={index}>
-      {bar} <br/>
+  const lyricsBlock = data.news.split("\n").map((bar, index) => (
+    <span className="bar" key={index}>
+      {bar} <br />
     </span>
-  ))
-  
+  ));
 
   return (
-    <div className="card" ref={ref} style={ratioStyle}>
+    <div className={style.card} ref={ref} style={ratioStyle}>
       {/* Conditionally Render this */}
       {!data.cover ? (
         <div className="import-screen">
@@ -29,7 +28,7 @@ export default function Card({data, ref, ratioStyle}) {
         </div>
       )}
 
-      <div className="card-footer">
+      <div className={style.footer}>
         <p className="song-info">
           {data.artist || data.song ? `${data.artist}, "${data.song}"` : ""}
         </p>

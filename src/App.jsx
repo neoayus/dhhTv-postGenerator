@@ -3,18 +3,16 @@ import { toPng } from "html-to-image";
 import { useRef, useState } from "react";
 
 import Navbar from "./components/Navbar";
-import Card from "./components/Card"
+import Card from "./components/Card";
 import Form from "./components/Form";
 
 import "./index.css";
 
 export default function App() {
-
   const [data, setData] = useState({
     cover: null,
-    lyrics: "",
-    artist: "",
-    song: "",
+    news: "THIS SHYT HAPPENED AND IT HAPPENED BIG",
+    caption: "what y'all think about it ?",
   });
 
   // feature : option for card ratio
@@ -22,7 +20,7 @@ export default function App() {
 
   const ratioStyle = {
     height: ratio == "fourOFive" ? "500px" : "400px",
-  }
+  };
 
   const card2export = useRef(null);
 
@@ -48,15 +46,12 @@ export default function App() {
     <>
       <Navbar />
       <div className="page">
+        <Card data={data} ref={card2export} ratioStyle={ratioStyle} />
 
-        <Card
-          data={data}
-          ref={card2export}
-          ratioStyle={ratioStyle}
-        />
-
-        <select id="ratio" onChange={(e)=> setRatio(e.target.value)}> 
-          <option value="" hidden> x &nbsp; : &nbsp; x</option>
+        <select id="ratio" onChange={(e) => setRatio(e.target.value)}>
+          <option value="" hidden>
+            x &nbsp; : &nbsp; x
+          </option>
           <option value="fourOFive">4 : 5</option>
           <option value="oneOone">1 : 1</option>
         </select>
@@ -66,7 +61,6 @@ export default function App() {
         </button>
 
         <Form data={data} setData={setData} />
-
       </div>
     </>
   );
