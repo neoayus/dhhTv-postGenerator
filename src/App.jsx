@@ -15,13 +15,6 @@ export default function App() {
     caption: "",
   });
 
-  // feature : option for card ratio
-  // const [ratio, setRatio] = useState("fourOFive");
-
-  // const ratioStyle = {
-  //   height: ratio == "fourOFive" ? "500px" : "400px",
-  // };
-
   const card2export = useRef(null);
 
   function handleDownload() {
@@ -47,15 +40,6 @@ export default function App() {
       <Navbar />
       <div className="page">
         <Card data={data} ref={card2export} />
-        {/* <Card data={data} ref={card2export} ratioStyle={ratioStyle} /> */}
-
-        {/* <select id="ratio" onChange={(e) => setRatio(e.target.value)}>
-          <option value="" hidden>
-            x &nbsp; : &nbsp; x
-          </option>
-          <option value="fourOFive">4 : 5</option>
-          <option value="oneOone">1 : 1</option>
-        </select> */}
 
         <button onClick={handleDownload} className="download">
           Download!

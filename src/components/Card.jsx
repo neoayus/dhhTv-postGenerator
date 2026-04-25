@@ -1,8 +1,8 @@
+import { forwardRef } from "react";
 import style from "../style/Card.module.css";
 import { Import, Logo } from "./SVGs";
 
-export default function Card({ data, ref }) {
-  // refactor: split the lyrics block in different bars on line brak.
+const Card = forwardRef(({ data }, ref) => {
   const newsBlock = data.news.split("\n").map((line, index) => (
     <span className="line" key={index}>
       {line} <br />
@@ -10,13 +10,13 @@ export default function Card({ data, ref }) {
   ));
 
   return (
-    <div
-      className={!data.cover ? style.importCard : style.card}
-      ref={ref}
-      style={{
-        backgroundImage: `url(${data.cover})`,
-      }}
-    >
+    <div className={!data.cover ? style.importCard : style.card} ref={ref}>
+      {/* Background Image */}
+      {data.cover && (
+        <img src={data.cover} alt="bg" className={style.bgImage} />
+      )}
+
+      {/* If no image */}
       {!data.cover ? (
         <div className="import-screen">
           <Import />
@@ -25,10 +25,12 @@ export default function Card({ data, ref }) {
       ) : (
         <div className={style.content}>
           <span className={style.swipe}> SWIPE LEFT </span>
+
           <div className={style.bottomContent}>
             <span className={style.type}> NEWS </span>
-            <div className={style.news}> {newsBlock} </div>
-            <p className={style.caption}> {data.caption}</p>
+            <div className={style.news}>{newsBlock}</div>
+            <p className={style.caption}>{data.caption}</p>
+
             <div className={style.footer}>
               <Logo />
               <div className={style.hr}></div>
@@ -37,6 +39,7 @@ export default function Card({ data, ref }) {
         </div>
       )}
     </div>
-    // </div>
   );
-}
+});
+
+export default Card;
