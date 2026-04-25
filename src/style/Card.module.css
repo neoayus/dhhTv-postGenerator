@@ -15,7 +15,7 @@
 
 .importCard {
   height: 31.25rem;
-  aspect-ratio: 4/5;
+  aspect-ratio: 3/4;
 
   display: flex;
   flex-direction: column;
