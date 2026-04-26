@@ -16,8 +16,9 @@ const formatInline = (text) => {
   });
 };
 
-const Card = forwardRef(({ data }, ref) => {
+const Card = forwardRef(({ data }, ref, isBlack) => {
   const [gradientPos, setGradientPos] = useState(13);
+
   const newsBlock = data.news.split("\n").map((line, index) => (
     <span className={style.line} key={index}>
       {formatInline(line)} <br />
@@ -44,7 +45,12 @@ const Card = forwardRef(({ data }, ref) => {
           </div>
         ) : (
           <div className={style.content}>
-            <span className={style.swipe}> SWIPE LEFT </span>
+            <span
+              className={style.swipe}
+              style={{ color: isBlack ? "black" : "white" }}
+            >
+              SWIPE LEFT
+            </span>
 
             <div className={style.bottomContent}>
               <span className={style.type}> NEWS </span>

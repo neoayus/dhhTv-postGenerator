@@ -15,6 +15,7 @@ export default function App() {
     caption: "",
   });
 
+  const [isBlack, setIsBlack] = useState(false);
   const card2export = useRef(null);
 
   function handleDownload() {
@@ -39,10 +40,21 @@ export default function App() {
     <>
       <Navbar />
       <div className="page">
-        <Card data={data} ref={card2export} />
-        <button onClick={handleDownload} className="download">
-          Download!
-        </button>
+        <Card data={data} ref={card2export} isBlack={isBlack} />
+
+        <div style={{ display: "flex", alignContent: "flex-end" }}>
+          <button
+            onClick={(prev) => {
+              setIsBlack(!prev);
+              console.log("fuck");
+            }}
+          >
+            *
+          </button>
+          <button onClick={handleDownload} className="download">
+            Download!
+          </button>
+        </div>
 
         <Form data={data} setData={setData} />
       </div>

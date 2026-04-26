@@ -96,10 +96,10 @@
   font-family: 'cannon';
   font-size: 10px;
 
-  background-color: white;
+  /* background-color: white; */
 
   padding: 2px 8px;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .news {
@@ -118,7 +118,7 @@
   font-style: italic;
 
   margin: 0 0 13px 0;
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 100;
 
   color: white;
