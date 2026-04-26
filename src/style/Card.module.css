@@ -26,7 +26,7 @@
 
 .card {
   height: 31.25rem;
-  aspect-ratio: 4/5;
+  aspect-ratio: 3/4;
 
   position: relative;
   overflow: hidden; /* important */
