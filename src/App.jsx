@@ -1,5 +1,5 @@
 // import library function to export lyric card
-// import { toPng } from "html-to-image";
+import { toPng } from "html-to-image";
 import { useRef, useState } from "react";
 
 import Navbar from "./components/Navbar";
