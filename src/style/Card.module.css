@@ -155,6 +155,7 @@
   transform: rotate(180deg);
   appearance: none;
   background: transparent;
+  touch-action: none;
 }
 
 input[type="range"] {
