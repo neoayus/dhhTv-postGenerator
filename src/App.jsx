@@ -40,7 +40,6 @@ export default function App() {
       <Navbar />
       <div className="page">
         <Card data={data} ref={card2export} />
-
         <button onClick={handleDownload} className="download">
           Download!
         </button>

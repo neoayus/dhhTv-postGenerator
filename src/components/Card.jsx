@@ -1,4 +1,4 @@
-import { forwardRef } from "react";
+import { forwardRef, useState } from "react";
 import style from "../style/Card.module.css";
 import { Import, Logo } from "./SVGs";
 
@@ -17,6 +17,7 @@ const formatInline = (text) => {
 };
 
 const Card = forwardRef(({ data }, ref) => {
+  const [gradientPos, setGradientPos] = useState(13);
   const newsBlock = data.news.split("\n").map((line, index) => (
     <span className={style.line} key={index}>
       {formatInline(line)} <br />
@@ -24,34 +25,50 @@ const Card = forwardRef(({ data }, ref) => {
   ));
 
   return (
-    <div className={!data.cover ? style.importCard : style.card} ref={ref}>
-      {/* Background Image */}
-      {data.cover && (
-        <img src={data.cover} alt="bg" className={style.bgImage} />
-      )}
+    <div style={{ display: "flex", gap: "20px" }}>
+      <div
+        className={!data.cover ? style.importCard : style.card}
+        ref={ref}
+        style={{ "--pos": `${gradientPos}%` }}
+      >
+        {/* Background Image */}
+        {data.cover && (
+          <img src={data.cover} alt="bg" className={style.bgImage} />
+        )}
 
-      {/* If no image */}
-      {!data.cover ? (
-        <div className="import-screen">
-          <Import />
-          <p>Add an Image</p>
-        </div>
-      ) : (
-        <div className={style.content}>
-          <span className={style.swipe}> SWIPE LEFT </span>
+        {/* If no image */}
+        {!data.cover ? (
+          <div className="import-screen">
+            <Import />
+            <p>Add an Image</p>
+          </div>
+        ) : (
+          <div className={style.content}>
+            <span className={style.swipe}> SWIPE LEFT </span>
 
-          <div className={style.bottomContent}>
-            <span className={style.type}> NEWS </span>
-            <div className={style.news}>{newsBlock}</div>
-            <p className={style.caption}>{data.caption}</p>
+            <div className={style.bottomContent}>
+              <span className={style.type}> NEWS </span>
+              <div className={style.news}>{newsBlock}</div>
+              <p className={style.caption}>{data.caption}</p>
 
-            <div className={style.footer}>
-              <Logo />
-              <div className={style.hr}></div>
+              <div className={style.footer}>
+                <Logo />
+                <div className={style.hr}></div>
+              </div>
             </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
+
+      {/* slider */}
+      <input
+        className={style.slider}
+        type="range"
+        min="0"
+        max="100"
+        value={gradientPos}
+        onChange={(e) => setGradientPos(Number(e.target.value))}
+      />
     </div>
   );
 });

@@ -52,9 +52,11 @@
   position: absolute;
   inset: 0;
 
-  background: #000000;
-  background: linear-gradient(360deg, rgba(0, 0, 0, 1) 13%, rgba(255, 255, 255, 0) 70%);
+  /* background: #000000; */
+  /* background: linear-gradient(360deg, rgba(0, 0, 0, 1) 13%, rgba(255, 255, 255, 0) 70%); */
 
+  background: #000000;
+  background: linear-gradient(360deg, rgba(0, 0, 0, 1) var(--pos), rgba(255, 255, 255, 0) 75%);
 
   z-index: 1;
 }
@@ -143,4 +145,36 @@
 /* make news all caps */
 .line {
   text-transform: uppercase;
+}
+
+/* slider input fix */
+
+.slider{
+  writing-mode: vertical-lr;
+  height: 500px;
+  transform: rotate(180deg);
+  appearance: none;
+  background: transparent;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 6px;
+}
+
+/* track */
+input[type="range"]::-webkit-slider-runnable-track {
+  background: #909090;
+  width: 6px;
+  border-radius: 10px;
+}
+
+/* thumb */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  background: #202020;
+  border-radius: 50%;
+  cursor: pointer;
 }
