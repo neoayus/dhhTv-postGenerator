@@ -1,5 +1,5 @@
 // import library function to export lyric card
-import { toPng } from "html-to-image";
+// import { toPng } from "html-to-image";
 import { useRef, useState } from "react";
 
 import Navbar from "./components/Navbar";
@@ -42,11 +42,10 @@ export default function App() {
       <div className="page">
         <Card data={data} ref={card2export} isBlack={isBlack} />
 
-        <div style={{ display: "flex", alignContent: "flex-end" }}>
+        <div style={{ display: "flex", alignContent: "flex-end", gap: "10px" }}>
           <button
-            onClick={(prev) => {
-              setIsBlack(!prev);
-              console.log("fuck");
+            onClick={() => {
+              setIsBlack(!isBlack);
             }}
           >
             *

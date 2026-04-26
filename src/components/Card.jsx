@@ -16,7 +16,7 @@ const formatInline = (text) => {
   });
 };
 
-const Card = forwardRef(({ data }, ref, isBlack) => {
+const Card = forwardRef(({ data, isBlack }, ref) => {
   const [gradientPos, setGradientPos] = useState(13);
 
   const newsBlock = data.news.split("\n").map((line, index) => (
