@@ -2,10 +2,24 @@ import { forwardRef } from "react";
 import style from "../style/Card.module.css";
 import { Import, Logo } from "./SVGs";
 
+// functio to format text as per need (red and all caps) using regex.
+const formatInline = (text) => {
+  return text.split(/(\*\*.*?\*\*)/g).map((part, i) => {
+    if (part.startsWith("**") && part.endsWith("**")) {
+      return (
+        <span key={i} style={{ color: "rgb(255, 0, 0)", fontWeight: "bold" }}>
+          {part.slice(2, -2)}
+        </span>
+      );
+    }
+    return part;
+  });
+};
+
 const Card = forwardRef(({ data }, ref) => {
   const newsBlock = data.news.split("\n").map((line, index) => (
-    <span className="line" key={index}>
-      {line} <br />
+    <span className={style.line} key={index}>
+      {formatInline(line)} <br />
     </span>
   ));
 

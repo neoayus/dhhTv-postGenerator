@@ -143,3 +143,8 @@
   margin-left: 12px;
   background-color: white;
 }
+
+/* make news all caps */
+.line {
+  text-transform: uppercase;
+}
