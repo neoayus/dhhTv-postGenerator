@@ -11,7 +11,7 @@ import "./index.css";
 export default function App() {
   const [data, setData] = useState({
     cover: null,
-    news: "This that big news, that i wanan sell as a competitor of the service.",
+    news: "",
     caption: "",
   });
 
