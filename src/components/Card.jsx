@@ -1,6 +1,6 @@
 import { forwardRef, useState } from "react";
 import style from "../style/Card.module.css";
-import { Import, Logo } from "./SVGs";
+import { Ih3Logo, Import, Logo } from "./SVGs";
 
 // functio to format text as per need (red and all caps) using regex.
 const formatInline = (text) => {
@@ -58,7 +58,7 @@ const Card = forwardRef(({ data, isBlack }, ref) => {
               <p className={style.caption}>{data.caption}</p>
 
               <div className={style.footer}>
-                <Logo />
+                <Ih3Logo />
                 <div className={style.hr}></div>
               </div>
             </div>
